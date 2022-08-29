@@ -1,18 +1,32 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GunsManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject Gun;
+
+
+    public static GunsManager instance;
+
+
+    private void Awake()
     {
         
     }
 
+    // Start is called before the first frame update
+    /*
+    void Start()
+    {
+        
+    }
+    */
     // Update is called once per frame
+    /*
     void Update()
     {
         
     }
+    */
 }
