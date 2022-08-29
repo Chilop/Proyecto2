@@ -10,7 +10,11 @@ public class GunsInfo : ScriptableObject
 
     // atributos que tiene cada arma
 
-    public string MutationName;
-    public string Description;
+    [SerializeField] private string mutationName;
+    public string description;
     public int damage;
+
+    public string MutationName => mutationName;
+    public string Description;
+    public int Damage;
 }
