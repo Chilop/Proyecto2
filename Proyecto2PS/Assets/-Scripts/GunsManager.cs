@@ -27,7 +27,7 @@ public class GunsManager : MonoBehaviour
     public void SetGun(ScriptableObject scriptableObject)
     {
         Gun = scriptableObject;
-
+        Debug.Log("Se puso el arma");
         
     }
 
