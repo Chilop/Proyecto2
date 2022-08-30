@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GunsManager : MonoBehaviour
 {
+    //[SerializeField] private List<ScriptableObject> ;
     [SerializeField] private ScriptableObject Gun;
+    //[SerializeField] private ScriptableObject Gun2;
 
 
     public static GunsManager instance { get; private set; }
@@ -25,7 +27,8 @@ public class GunsManager : MonoBehaviour
     public void SetGun(ScriptableObject scriptableObject)
     {
         Gun = scriptableObject;
-        Debug.Log("Se puso el arma");
+
+        
     }
 
 
