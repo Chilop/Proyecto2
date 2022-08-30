@@ -10,11 +10,15 @@ public class GunsInfo : ScriptableObject
 
     // atributos que tiene cada arma
 
+    // es para ponerlo privado y que se pueda ver desde el inspector
     [SerializeField] private string mutationName;
+    //public string mutationName;
     public string description;
     public int damage;
 
+   // se define para que ponga la informacion para los campos privados
     public string MutationName => mutationName;
-    public string Description;
-    public int Damage;
+    //public string Description;
+    //public int Damage;
+   
 }

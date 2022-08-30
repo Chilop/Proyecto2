@@ -4,16 +4,30 @@ using UnityEngine;
 
 public class GunsManager : MonoBehaviour
 {
-    [SerializeField] private GameObject Gun;
+    [SerializeField] private ScriptableObject Gun;
 
 
-    public static GunsManager instance;
+    public static GunsManager instance { get; private set; }
 
 
     private void Awake()
     {
+        if(instance != null && instance != this)
+        {
+            Destroy(this);
+        }else
+        {
         instance = this;
+
+        }
     }
+
+    public void SetGun(ScriptableObject scriptableObject)
+    {
+        Gun = scriptableObject;
+        Debug.Log("Se puso el arma");
+    }
+
 
     // Start is called before the first frame update
     /*

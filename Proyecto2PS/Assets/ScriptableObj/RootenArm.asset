@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fc3afd9d261db4c90073abc53e8f64, type: 3}
   m_Name: RootenArm
   m_EditorClassIdentifier: 
-  MutationName: RootenArm
-  Description: lanzar brazo
+  mutationName: RootenArm
+  description: lanzar brazo
   damage: 5

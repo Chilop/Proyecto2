@@ -9,8 +9,12 @@ public class Guns_Mutations : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(gunsinfo.MutationName);
-        Debug.Log(gunsinfo.Description);
+        Debug.Log(gunsinfo.description);
         Debug.Log(gunsinfo.damage);
+
+        GunsManager.instance.SetGun(gunsinfo);
+
+        Destroy(gameObject);
     }
     
         
