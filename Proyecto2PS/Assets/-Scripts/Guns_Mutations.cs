@@ -7,12 +7,8 @@ using UnityEngine.UI;
 public class Guns_Mutations : MonoBehaviour
 {
     [SerializeField] GunsInfo gunsinfo;
-    [SerializeField] GameObject MenuPickupGun;
-
-    void Start()
-    {
-        MenuPickupGun.SetActive(false);
-    }
+    [SerializeField] GameObject samegameobject;
+    [SerializeField] UIPickupGun MenuPickupGun;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,7 +16,7 @@ public class Guns_Mutations : MonoBehaviour
         Debug.Log(gunsinfo.description);
         Debug.Log(gunsinfo.damage);
 
-        MenuPickupGun.SetActive(true);
+        MenuPickupGun.Appear(gunsinfo);
 
 
 

@@ -7,11 +7,15 @@ using UnityEngine.UI;
 
 public class UIPickupGun : MonoBehaviour
 {
-    private GunsInfo gunsinfo;
+   // GameObject weapon;
+
+
+    GunsInfo gunsinfo;
+    [SerializeField] GameObject Menupick;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Menupick.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,9 +24,21 @@ public class UIPickupGun : MonoBehaviour
         
     }
 
+    public void Appear(GunsInfo gunsinfo)
+    {
+        this.gunsinfo = gunsinfo;
+        Menupick.SetActive(true);
+    }
+
+
     public void ButtonPickGunup()
     {
-        GunsManager.instance.SetGun(gunsinfo);
+        
+            GunsManager.instance.SetGun(gunsinfo);
+
+            Menupick.SetActive(false);
+
+        
 
         
     }
@@ -31,11 +47,9 @@ public class UIPickupGun : MonoBehaviour
     {
         if (gunsinfo != null)
         {
-            
-        }
-        else
-        {
+            gunsinfo = gunsinfo; 
 
+            Menupick.SetActive(false);
         }
         
     }
