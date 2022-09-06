@@ -9,7 +9,7 @@ public class UIPickupGun : MonoBehaviour
 {
    // GameObject weapon;
 
-
+    
     GunsInfo gunsinfo;
     [SerializeField] GameObject Menupick;
     // Start is called before the first frame update
@@ -37,10 +37,7 @@ public class UIPickupGun : MonoBehaviour
             GunsManager.instance.SetGun(gunsinfo);
 
             Menupick.SetActive(false);
-
-        
-
-        
+  
     }
 
     public void ButtonKeepGun()
