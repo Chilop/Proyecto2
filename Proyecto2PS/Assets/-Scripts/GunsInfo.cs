@@ -18,7 +18,9 @@ public class GunsInfo : ScriptableObject
 
    // se define para que ponga la informacion para los campos privados
     public string MutationName => mutationName;
+
+    public GameObject PrefabGun { get; internal set; }
     //public string Description;
     //public int Damage;
-   
+
 }
