@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public float SpeedMov;
+    GunsManager gunsManager;
+    GameObject PrefabGun;
+    [SerializeField] GameObject PrincipalGun;
+
 
     // Start is called before the first frame update
     // by the moment i'm noy using void start
@@ -41,4 +46,14 @@ public class Player : MonoBehaviour
         transform.Translate(new Vector2(MovementX, 0f));
         transform.Translate(new Vector2(0f, MovementY));
     }
+
+
+    private void SetGun(GunsInfo gunsInfo)
+    {
+       Instantiate(gunsInfo.PrefabGun);
+
+
+    }
+
+
 }

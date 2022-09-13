@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunsManager : MonoBehaviour
 {
     //[SerializeField] private List<ScriptableObject> ;
+    Player grabGun;
     [SerializeField] private ScriptableObject Gun;
     //[SerializeField] private ScriptableObject Gun2;
 
@@ -31,6 +32,8 @@ public class GunsManager : MonoBehaviour
         
     }
 
+    
+
 
     // Start is called before the first frame update
     /*
@@ -40,10 +43,10 @@ public class GunsManager : MonoBehaviour
     }
     */
     // Update is called once per frame
-    /*
+    
     void Update()
     {
         
     }
-    */
+    
 }
