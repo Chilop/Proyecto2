@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GunsManager : MonoBehaviour
 {
-    //[SerializeField] private List<ScriptableObject> ;
-    Player grabGun;
     [SerializeField] private ScriptableObject Gun;
     //[SerializeField] private ScriptableObject Gun2;
 
@@ -29,24 +27,7 @@ public class GunsManager : MonoBehaviour
     {
         Gun = scriptableObject;
         Debug.Log("Se puso el arma");
-        
-    }
-
-    
-
-
-    // Start is called before the first frame update
-    /*
-    void Start()
-    {
-        
-    }
-    */
-    // Update is called once per frame
-    
-    void Update()
-    {
-        
+        Player.instance.SetGun(instance);
     }
     
 }
