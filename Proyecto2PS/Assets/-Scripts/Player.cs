@@ -6,30 +6,28 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float SpeedMov;
-    GunsManager gunsManager;
-    GameObject PrefabGun;
-    [SerializeField] GameObject PrincipalGun;
+    GunsManager gunsInfo1;
+    [SerializeField] private ScriptableObject Gun1;
 
+    public static Player instance { get; private set; }
 
-    // Start is called before the first frame update
-    // by the moment i'm noy using void start
-    /*
-    void Start()
+    private void Awake()
     {
-        
+        if (instance != null && instance !=this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
     }
-    */
 
-
-
-    // Update is called once per frame
     void Update()
     {
 
         // creando la funcion de movimiento
-
         //transform.Translate(new Vector2(0f, SpeedMov) * Time.deltaTime);
-
         // vamos a usar para el movimiento un input.getaxis
 
         float MovementY = Input.GetAxis("Vertical") * SpeedMov * Time.deltaTime;
@@ -45,15 +43,24 @@ public class Player : MonoBehaviour
 
         transform.Translate(new Vector2(MovementX, 0f));
         transform.Translate(new Vector2(0f, MovementY));
+
+
     }
 
-
-    private void SetGun(GunsInfo gunsInfo)
+    private void OnTriggerEnter(Collider other)
     {
-       Instantiate(gunsInfo.PrefabGun);
-
-
+        SetGun(gunsInfo1);
     }
+
+
+    public void SetGun(GunsManager gunsInfo)
+    {
+        gunsInfo1 = gunsInfo;
+       Instantiate(gunsInfo, transform);
+    }
+
+   
+
 
 
 }
