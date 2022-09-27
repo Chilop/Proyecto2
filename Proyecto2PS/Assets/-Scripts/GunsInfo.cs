@@ -12,7 +12,6 @@ public class GunsInfo : ScriptableObject
 
     // es para ponerlo privado y que se pueda ver desde el inspector
     [SerializeField] private string mutationName;
-    //public string mutationName;
    [SerializeField] private string description;
     [SerializeField] private int damage;
 
@@ -20,7 +19,5 @@ public class GunsInfo : ScriptableObject
     public string MutationName => mutationName;
     public string Description => description;
     public int Damage => damage;
-    //public string Description;
-    //public int Damage;
 
 }

@@ -21,9 +21,7 @@ public class Guns_Mutations : MonoBehaviour
 
 
         // esta linea hace que al recojer el arma, esta mande sus elementos al Gun manager
-
        // GunsManager.instance.SetGun(gunsinfo);
-
        // Destroy(gameObject);
     }
     

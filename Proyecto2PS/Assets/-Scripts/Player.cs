@@ -8,7 +8,12 @@ public class Player : MonoBehaviour
     public float SpeedMov;
     GunsManager gunsInfo1;
     [SerializeField] private ScriptableObject Gun1;
+   [SerializeField] Camera cam;
+    [SerializeField] Rigidbody2D rigidb2d;
+    Vector2 movementRigid2d;
+    Vector2 mousePosition;
 
+    // Existe un unico jugador por lo que lo instanciamos
     public static Player instance { get; private set; }
 
     private void Awake()
@@ -25,36 +30,39 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        // movimiento del jugador
+        float MovementY = Input.GetAxisRaw("Vertical") * SpeedMov * Time.deltaTime;
+        float MovementX = Input.GetAxisRaw("Horizontal") * SpeedMov * Time.deltaTime;
 
-        // creando la funcion de movimiento
-        //transform.Translate(new Vector2(0f, SpeedMov) * Time.deltaTime);
-        // vamos a usar para el movimiento un input.getaxis
-
-        float MovementY = Input.GetAxis("Vertical") * SpeedMov * Time.deltaTime;
-        float MovementX = Input.GetAxis("Horizontal") * SpeedMov * Time.deltaTime;
-
-        /* 
-         * haciendo la correcion con time.deltatime;
-            MovementX *= Time.deltaTime;
-            MovementY *= Time.deltaTime;
-        */
-
-        // poniendo lo que creamos para el transform para que se mueva
+        
 
         transform.Translate(new Vector2(MovementX, 0f));
         transform.Translate(new Vector2(0f, MovementY));
 
+        // recibe la posicion del mouse 
+        mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    private void FixedUpdate()
+    {
+        // el rigidbody gira en direccion donde apunta el mouse
+        rigidb2d.MovePosition(rigidb2d.position + movementRigid2d * SpeedMov * Time.fixedDeltaTime);
+        Vector2 lookDirection = mousePosition - rigidb2d.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        rigidb2d.rotation = angle;
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        // recibir el arma al tocar el arma 
         SetGun(gunsInfo1);
     }
 
 
     public void SetGun(GunsManager gunsInfo)
     {
+        // traer los atributos del Gunsmanager
         gunsInfo1 = gunsInfo;
        Instantiate(gunsInfo, transform);
     }
