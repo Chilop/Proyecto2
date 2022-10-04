@@ -1,25 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class Shoot : MonoBehaviour
 {
-   public Transform firepoint;
-   [SerializeField]private GameObject bulletprefab;
-   
-
-    // Update is called once per frame
+    [SerializeField] private Transform _firepoint = default;
+    [SerializeField] private GameObject _bulletprefab = default;
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             shoot();
         }
     }
-
     void shoot()
     {
-        GameObject bullet = Instantiate(bulletprefab, firepoint.position,firepoint.rotation);     
+        GameObject bullet = Instantiate(_bulletprefab, _firepoint.position, _firepoint.rotation);
     }
-
 }

@@ -1,33 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Guns_Mutations : MonoBehaviour
 {
-    [SerializeField] GunsInfo gunsinfo;
-    [SerializeField] GameObject samegameobject;
-    [SerializeField] UIPickupGun MenuPickupGun;
+    [SerializeField] private GunsInfo gunsinfo = default;
+    [SerializeField] private UIPickupGun MenuPickupGun = default;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(gunsinfo.MutationName);
         Debug.Log(gunsinfo.Description);
         Debug.Log(gunsinfo.Damage);
-
         MenuPickupGun.Appear(gunsinfo);
-
-
-
-        // esta linea hace que al recojer el arma, esta mande sus elementos al Gun manager
-
-       // GunsManager.instance.SetGun(gunsinfo);
-
-       // Destroy(gameObject);
     }
-    
-        
-   
-
 }

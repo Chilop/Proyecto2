@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-
 public class Player : MonoBehaviour
 {
-    public float SpeedMov;
-    GunsManager gunsInfo1;
-    [SerializeField] private ScriptableObject Gun1;
-    Vector2 mouseposition;
-    Vector2 movement;
-    [SerializeField] private Rigidbody2D rigidbd2D;
-    [SerializeField] private Camera cam;
-
+    [SerializeField] private float _SpeedMov = default;
+    [SerializeField] GunsManager gunsInfo1 = default;
+    Vector2 _mouseposition = default;
+    Vector2 _movement = default;
+    [SerializeField] private Rigidbody2D _rigidbd2D = default;
+    [SerializeField] private Camera _cam = default;
     public static Player instance { get; private set; }
 
     private void Awake()
@@ -27,38 +21,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    
     void Update()
     {
-
-        // creando la funcion de movimiento
-        //transform.Translate(new Vector2(0f, SpeedMov) * Time.deltaTime);
-        // vamos a usar para el movimiento un input.getaxis
-
-        movement.y = Input.GetAxis("Vertical") * SpeedMov;
-        movement.x = Input.GetAxis("Horizontal") * SpeedMov; 
-
-        /* 
-         * haciendo la correcion con time.deltatime;
-            MovementX *= Time.deltaTime;
-            MovementY *= Time.deltaTime;
-        */
-
-        // poniendo lo que creamos para el transform para que se mueva
-
-       // transform.Translate(new Vector2(MovementX, 0f));
-       // transform.Translate(new Vector2(0f, MovementY));
-
-        mouseposition = cam.ScreenToWorldPoint(Input.mousePosition);
+        _movement.y = Input.GetAxis("Vertical") * _SpeedMov;
+        _movement.x = Input.GetAxis("Horizontal") * _SpeedMov; 
+        _mouseposition = _cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void FixedUpdate()
     {
-        rigidbd2D.MovePosition(rigidbd2D.position + movement * Time.fixedDeltaTime);
-
-        Vector2 lookdirection = mouseposition - rigidbd2D.position;
+        _rigidbd2D.MovePosition(_rigidbd2D.position + _movement * Time.fixedDeltaTime);
+        Vector2 lookdirection = _mouseposition - _rigidbd2D.position;
         float angle = Mathf.Atan2(lookdirection.y, lookdirection.x) * Mathf.Rad2Deg - 90f;
-        rigidbd2D.rotation = angle;
+        _rigidbd2D.rotation = angle;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,15 +41,9 @@ public class Player : MonoBehaviour
         SetGun(gunsInfo1);
     }
 
-
     public void SetGun(GunsManager gunsInfo)
     {
         gunsInfo1 = gunsInfo;
        Instantiate(gunsInfo, transform);
     }
-
-   
-
-
-
 }

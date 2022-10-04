@@ -619,9 +619,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258e9bc5a81a61140aa9cc0ac9c7f074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedMov: 5
-  Gun1: {fileID: 0}
-  cam: {fileID: 963194227}
+  _SpeedMov: 4
+  gunsInfo1: {fileID: 435407347}
+  _rigidbd2D: {fileID: 425927175}
+  _cam: {fileID: 963194227}
 --- !u!50 &425927175
 Rigidbody2D:
   serializedVersion: 4
@@ -681,8 +682,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131a71ed6c35125468ee2132de0ca8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firepoint: {fileID: 962711401}
-  bulletprefab: {fileID: 6472385207524819290, guid: b859cafef4f8f7b4dbcc5fa6aa308e84, type: 3}
+  _firepoint: {fileID: 962711401}
+  _bulletprefab: {fileID: 6472385207524819290, guid: b859cafef4f8f7b4dbcc5fa6aa308e84, type: 3}
 --- !u!1 &435407346
 GameObject:
   m_ObjectHideFlags: 0
