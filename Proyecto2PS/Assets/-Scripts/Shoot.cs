@@ -3,6 +3,7 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] private Transform _firepoint = default;
     [SerializeField] private GameObject _bulletprefab = default;
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
