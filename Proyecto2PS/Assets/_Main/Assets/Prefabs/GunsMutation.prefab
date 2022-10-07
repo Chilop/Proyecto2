@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7911804813987978284}
   - component: {fileID: 7911804813987978279}
   m_Layer: 0
-  m_Name: RootenArm
+  m_Name: GunsMutation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7911804813987978285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.29, y: 2.21, z: 4.3946557}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94,11 +94,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7911804813987978285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2042041a0624d46aeecf5942930b50, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ca825ef3ce4e40f993ea28fa5464dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunsinfo: {fileID: 11400000, guid: 1a0b51529d72e134f8e9648e5cf9fac6, type: 2}
-  samegameobject: {fileID: 0}
+  gunsinfo: {fileID: 0}
   MenuPickupGun: {fileID: 0}
 --- !u!61 &7911804813987978279
 BoxCollider2D:

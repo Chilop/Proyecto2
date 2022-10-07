@@ -1,5 +1,5 @@
 using UnityEngine;
-public class FollowingEnemie : MonoBehaviour
+public class FollowingEnemy : MonoBehaviour
 {
     [SerializeField] private float _enemyspeed = default;
     [SerializeField] public Transform _target = default;

@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95fc3afd9d261db4c90073abc53e8f64, type: 3}
-  m_Name: RootenArm
+  m_Name: CoaguledBlood
   m_EditorClassIdentifier: 
-  mutationName: RootenArm
-  description: lanzar brazo
-  damage: 5
+  mutationName: CoaguledBlood
+  description: Lanzar Sangre
+  damage: 7
+  weapon: {fileID: 3421859619356660341, guid: 135314a602f04423c8a4dbe08f35635e, type: 3}
