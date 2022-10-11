@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _speed = default;
     [SerializeField] private Rigidbody2D _rigidbody2D = default;
     [SerializeField] private Camera _camera = default;
-
+    [SerializeField] private Joystick _joystick = null;
     private Vector2 _mousePosition = default;
     private Vector2 _movement = default;
     private GameObject _currentWeapon = default;
@@ -26,8 +26,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        // movement with joystick
+        _movement.x = _joystick.Horizontal * _speed;
+        _movement.y = _joystick.Vertical * _speed;
+        /* movement with normal axis (keyboard and controller)
         _movement.y = Input.GetAxis("Vertical") * _speed;
         _movement.x = Input.GetAxis("Horizontal") * _speed;
+        */
         _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
