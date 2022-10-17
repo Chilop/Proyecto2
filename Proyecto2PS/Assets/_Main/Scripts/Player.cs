@@ -39,9 +39,11 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         _rigidbody2D.MovePosition(_rigidbody2D.position + _movement * Time.fixedDeltaTime);
+        /*
         Vector2 lookdirection = _mousePosition - _rigidbody2D.position;
         float angle = Mathf.Atan2(lookdirection.y, lookdirection.x) * Mathf.Rad2Deg - 90f;
         _rigidbody2D.rotation = angle;
+        */
     }
 
     public void SetGun(GunsInfo gunsInfo)
