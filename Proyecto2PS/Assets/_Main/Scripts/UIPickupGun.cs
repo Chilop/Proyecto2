@@ -32,5 +32,4 @@ public class UIPickupGun : MonoBehaviour
         _gunsInfo = null;
         _menuPick.SetActive(false);
     }
-
 }

@@ -48,5 +48,4 @@ public class Player : MonoBehaviour
 
         _currentWeapon = Instantiate(gunsInfo.Weapon, transform.position, transform.rotation, transform);
     }
-
 }

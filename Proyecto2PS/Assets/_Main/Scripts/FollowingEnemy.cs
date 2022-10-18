@@ -32,5 +32,4 @@ public class FollowingEnemy : MonoBehaviour
     {
         _enemyRigidbody2D.MovePosition((Vector2)transform.position + (direction * _enemySpeed * Time.deltaTime));
     }
-
 }

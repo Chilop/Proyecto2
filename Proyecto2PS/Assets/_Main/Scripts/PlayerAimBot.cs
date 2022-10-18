@@ -16,5 +16,4 @@ public class PlayerAimBot : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         _playerRigidbody2D.transform.rotation = rotation;
     }
-
 }
