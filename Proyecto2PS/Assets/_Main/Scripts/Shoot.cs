@@ -17,4 +17,5 @@ public class Shoot : MonoBehaviour
     {
         Instantiate(_bulletPrefab, _firepoint.position, _firepoint.rotation);
     }
+
 }

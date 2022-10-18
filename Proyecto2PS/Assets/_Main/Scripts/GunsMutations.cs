@@ -9,4 +9,5 @@ public class GunsMutations : MonoBehaviour
     {
         _menuPickupGun.Appear(this, _gunsInfo);
     }
+
 }

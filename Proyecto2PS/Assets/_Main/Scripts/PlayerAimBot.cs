@@ -1,18 +1,14 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAimBot : MonoBehaviour
 {
     private Rigidbody2D _playerRigidbody2D = null;
-    private GameObject _enemy = null;
+    private List<GameObject> _enemylist = new List<GameObject>(0);
+    private SphereCollider _sphereCollider = default;
+    private GameObject _enemy;
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         Vector2 lookdirection = _enemy.transform.position - transform.position;
@@ -20,4 +16,5 @@ public class PlayerAimBot : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         _playerRigidbody2D.transform.rotation = rotation;
     }
+
 }

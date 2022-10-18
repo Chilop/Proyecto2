@@ -26,24 +26,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // movement with joystick
         _movement.x = _joystick.Horizontal * _speed;
         _movement.y = _joystick.Vertical * _speed;
-        /* movement with normal axis (keyboard and controller)
-        _movement.y = Input.GetAxis("Vertical") * _speed;
-        _movement.x = Input.GetAxis("Horizontal") * _speed;
-        */
         _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void FixedUpdate()
     {
         _rigidbody2D.MovePosition(_rigidbody2D.position + _movement * Time.fixedDeltaTime);
-        /*
         Vector2 lookdirection = _mousePosition - _rigidbody2D.position;
         float angle = Mathf.Atan2(lookdirection.y, lookdirection.x) * Mathf.Rad2Deg - 90f;
-        _rigidbody2D.rotation = angle;
-        */
+        _rigidbody2D.rotation = angle; 
     }
 
     public void SetGun(GunsInfo gunsInfo)
@@ -55,4 +48,5 @@ public class Player : MonoBehaviour
 
         _currentWeapon = Instantiate(gunsInfo.Weapon, transform.position, transform.rotation, transform);
     }
+
 }

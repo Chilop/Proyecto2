@@ -20,4 +20,5 @@ public class GunsManager : MonoBehaviour
     {
         Player.Instance.SetGun(gunsInfo);
     }
+
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+
 public class FollowingEnemy : MonoBehaviour
 {
     [SerializeField] private float _enemySpeed = default;
@@ -24,11 +25,12 @@ public class FollowingEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveEnemy(_movement);
+        MoveEnemy(_movement);
     }
 
-    void moveEnemy(Vector2 _direction)
+    void MoveEnemy(Vector2 direction)
     {
-        _enemyRigidbody2D.MovePosition((Vector2)transform.position + (_direction * _enemySpeed * Time.deltaTime));
+        _enemyRigidbody2D.MovePosition((Vector2)transform.position + (direction * _enemySpeed * Time.deltaTime));
     }
+
 }
