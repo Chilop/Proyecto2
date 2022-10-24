@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlayerAimBot : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _enemylist = new List<GameObject>(0);
+    [SerializeField] private List<GameObject> _enemyList;
     [SerializeField] private int _aimRange = default;
     private GameObject _objectToFollow = default;
     private CircleCollider2D _circleCollider2D = default;
     private Rigidbody2D _playerRigidbody2D = null;
-
+    private Shoot _shoot;
     private void Start()
     {
         _playerRigidbody2D = GetComponent<Rigidbody2D>();
@@ -20,7 +20,7 @@ public class PlayerAimBot : MonoBehaviour
 
     void Update()
     {
-        Vector2 lookdirection = _enemylist.FirstOrDefault().transform.position - transform.position;
+        Vector2 lookdirection = _enemyList.FirstOrDefault().transform.position - transform.position;
         float angle = Mathf.Atan2(lookdirection.y, lookdirection.x) * Mathf.Rad2Deg - 90f;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         _playerRigidbody2D.transform.rotation = rotation;
@@ -30,9 +30,9 @@ public class PlayerAimBot : MonoBehaviour
     {
         if (!collision.CompareTag("Enemy")) return;
 
-        _enemylist.Add(collision.gameObject);
+        _enemyList.Add(collision.gameObject);
 
-        if (_enemylist.Count != 1) return;
+        if (_enemyList.Count != 1) return;
 
         Retarget();
     }
@@ -41,13 +41,13 @@ public class PlayerAimBot : MonoBehaviour
     {
         if (!collision.CompareTag("Enemy")) return;
 
-        _enemylist.Remove(collision.gameObject);
+        _enemyList.Remove(collision.gameObject);
 
         Retarget();
     }
 
     private void Retarget()
     {
-        _objectToFollow = _enemylist.FirstOrDefault();
+        _objectToFollow = _enemyList.FirstOrDefault();
     }
 }

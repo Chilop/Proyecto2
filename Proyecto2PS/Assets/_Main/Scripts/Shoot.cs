@@ -7,10 +7,7 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            ShootBullet();
-        }
+        ShootBullet();    
     }
 
     void ShootBullet()
