@@ -1,17 +1,27 @@
+using System.Collections;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
     [SerializeField] private Transform _firepoint = default;
     [SerializeField] private GameObject _bulletPrefab = default;
+    private float _shootInterval = 1f;
 
-    void Update()
+    void Start()
     {
-        ShootBullet();    
+       StartCoroutine(timerShoot(_shootInterval));    
     }
 
-    void ShootBullet()
+    public void ShootBullet()
     {
         Instantiate(_bulletPrefab, _firepoint.position, _firepoint.rotation);
+    }
+
+    IEnumerator timerShoot(float interval)
+    {
+        yield return new WaitForSeconds(interval);
+        ShootBullet();
+        StartCoroutine(timerShoot(interval));
+
     }
 }

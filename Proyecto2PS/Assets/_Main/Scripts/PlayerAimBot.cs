@@ -1,4 +1,5 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,7 +11,6 @@ public class PlayerAimBot : MonoBehaviour
     private GameObject _objectToFollow = default;
     private CircleCollider2D _circleCollider2D = default;
     private Rigidbody2D _playerRigidbody2D = null;
-    private Shoot _shoot;
     private void Start()
     {
         _playerRigidbody2D = GetComponent<Rigidbody2D>();
@@ -20,10 +20,9 @@ public class PlayerAimBot : MonoBehaviour
 
     void Update()
     {
-        Vector2 lookdirection = _enemyList.FirstOrDefault().transform.position - transform.position;
-        float angle = Mathf.Atan2(lookdirection.y, lookdirection.x) * Mathf.Rad2Deg - 90f;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        _playerRigidbody2D.transform.rotation = rotation;
+        if (_enemyList.Count == 0) return;
+        
+        LookEnemy();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,5 +48,13 @@ public class PlayerAimBot : MonoBehaviour
     private void Retarget()
     {
         _objectToFollow = _enemyList.FirstOrDefault();
+    }   
+
+    private void LookEnemy()
+    {
+        Vector2 lookdirection = _enemyList.FirstOrDefault().transform.position - transform.position;
+        float angle = Mathf.Atan2(lookdirection.y, lookdirection.x) * Mathf.Rad2Deg - 90f;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        _playerRigidbody2D.transform.rotation = rotation;
     }
 }
