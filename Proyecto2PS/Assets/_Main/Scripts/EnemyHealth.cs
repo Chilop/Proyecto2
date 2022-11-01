@@ -6,7 +6,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int _enemyLife = default;
-    private EnemyScriptableObject _enemyScriptableObject;
+    [SerializeField] private EnemyScriptableObject _enemyScriptableObject;
+
     void Start()
     {
 
@@ -23,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
 
         collision.gameObject.GetComponent<BulletDamage>();
 
-        _enemyLife = _enemyLife - 1;
+        _enemyLife = _enemyLife - ;
     }
 
     public void SetHealth(int _health)
