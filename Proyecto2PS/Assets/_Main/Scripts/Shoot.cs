@@ -1,13 +1,13 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class Shoot : MonoBehaviour
 {
     [SerializeField] private Transform _firepoint = default;
     [SerializeField] private GameObject _bulletPrefab = default;
-    [SerializeField] private BulletDamage _bulletScriptableObject = default;
-    private int _bulletDamage = default;
+    GunsInfo _gunsinfo;
     private float _shootInterval = 1f;
 
     void Start()
@@ -17,9 +17,8 @@ public class Shoot : MonoBehaviour
 
     public void ShootBullet()
     {
-        var bullet = Instantiate(_bulletPrefab, _firepoint.position, _firepoint.rotation);
-        bullet.GetComponent<BulletDamage>().SetDamage(_bulletDamage);
-        
+       var bullet = Instantiate(_bulletPrefab, _firepoint.position, _firepoint.rotation);
+        bullet.GetComponent<BulletDamage>().SetDamage(_gunsinfo.Damage); 
     }
 
     IEnumerator timerShoot(float interval)

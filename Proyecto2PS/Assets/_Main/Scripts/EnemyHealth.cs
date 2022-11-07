@@ -10,24 +10,24 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-
+        SetHealth(_enemyScriptableObject);
     }
 
     void Update()
     {
-        SetHealth(_enemyLife);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!collision.collider.CompareTag("Bullet")) return;
 
-        collision.gameObject.GetComponent<BulletDamage>();
+        var bulletDamage = collision.gameObject.GetComponent<BulletDamage>().Damage;
 
-        _enemyLife = _enemyLife - ;
+        _enemyLife = _enemyLife - bulletDamage;
     }
 
-    public void SetHealth(int _health)
+    public void SetHealth(EnemyScriptableObject _enemyhealth)
     {
         _enemyLife = _enemyScriptableObject.Health;
     }

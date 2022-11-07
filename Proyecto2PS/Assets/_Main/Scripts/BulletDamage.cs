@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    [SerializeField] private int _bulletDamage = default;
-    private GunsInfo _gunsScriptableObject;
+    public int Damage { get; private set; }
 
-    public void SetDamage(GunsInfo gunsInfo)
+    public void SetDamage(int bulletdamage)
     {
-        _bulletDamage = _gunsScriptableObject.Damage;
+        Damage = bulletdamage;
     }
 }
