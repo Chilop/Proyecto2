@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firepoint: {fileID: 2861646749814862180}
   _bulletPrefab: {fileID: 6472385207524819290, guid: b859cafef4f8f7b4dbcc5fa6aa308e84, type: 3}
-  _gunsScriptableObject: {fileID: 11400000, guid: 1a0b51529d72e134f8e9648e5cf9fac6, type: 2}
+  _gunsinfo: {fileID: 11400000, guid: 1a0b51529d72e134f8e9648e5cf9fac6, type: 2}
 --- !u!114 &7899666501242052178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firepoint: {fileID: 5085840935355733573}
   _bulletPrefab: {fileID: 6472385207524819290, guid: b859cafef4f8f7b4dbcc5fa6aa308e84, type: 3}
-  _gunsScriptableObject: {fileID: 11400000, guid: 1a0b51529d72e134f8e9648e5cf9fac6, type: 2}
+  _gunsinfo: {fileID: 11400000, guid: 1a0b51529d72e134f8e9648e5cf9fac6, type: 2}
 --- !u!1 &2542476621820280234
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] private Transform _firepoint = default;
     [SerializeField] private GameObject _bulletPrefab = default;
-    GunsInfo _gunsinfo;
+    [SerializeField] GunsInfo _gunsinfo = default;
     private float _shootInterval = 1f;
 
     void Start()
@@ -18,9 +18,11 @@ public class Shoot : MonoBehaviour
     public void ShootBullet()
     {
        var bullet = Instantiate(_bulletPrefab, _firepoint.position, _firepoint.rotation);
-        bullet.GetComponent<BulletDamage>().SetDamage(_gunsinfo.Damage); 
+        bullet.GetComponent<BulletDamage>().SetDamage(_gunsinfo.Damage);
+        Debug.Log("Bala con daño");
     }
-
+    
+    
     IEnumerator timerShoot(float interval)
     {
         yield return new WaitForSeconds(interval);

@@ -533,8 +533,6 @@ GameObject:
   - component: {fileID: 425927174}
   - component: {fileID: 425927175}
   - component: {fileID: 425927176}
-  - component: {fileID: 425927178}
-  - component: {fileID: 425927177}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -623,7 +621,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _rigidbody2D: {fileID: 425927175}
-  _camera: {fileID: 963194227}
   _joystick: {fileID: 1706392142}
 --- !u!50 &425927175
 Rigidbody2D:
@@ -672,36 +669,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &425927177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425927169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 080691fb9e2cca64db4fc3bd2e97c1e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyList: []
-  _aimRange: 10
---- !u!58 &425927178
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425927169}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &435407346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 903127438}
   - component: {fileID: 903127439}
+  - component: {fileID: 903127440}
   m_Layer: 0
   m_Name: AimRange
   m_TagString: Untagged
@@ -1092,12 +1060,27 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &903127440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903127437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080691fb9e2cca64db4fc3bd2e97c1e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyList: []
+  _aimRange: 10
+  _playerTransform: {fileID: 425927173}
 --- !u!1 &962711400
 GameObject:
   m_ObjectHideFlags: 0

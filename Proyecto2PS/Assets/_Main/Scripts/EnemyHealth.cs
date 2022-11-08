@@ -10,12 +10,15 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-        SetHealth(_enemyScriptableObject);
+        SetHealth(_enemyScriptableObject.Health);
     }
 
-    void Update()
+    private void Update()
     {
-        
+        if(_enemyLife <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -27,9 +30,9 @@ public class EnemyHealth : MonoBehaviour
         _enemyLife = _enemyLife - bulletDamage;
     }
 
-    public void SetHealth(EnemyScriptableObject _enemyhealth)
+    public void SetHealth(int _enemyhealth)
     {
-        _enemyLife = _enemyScriptableObject.Health;
+        _enemyLife = _enemyhealth;
     }
 
 }
