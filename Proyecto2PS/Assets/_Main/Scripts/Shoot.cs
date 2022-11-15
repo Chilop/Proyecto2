@@ -22,7 +22,7 @@ public class Shoot : MonoBehaviour
         Debug.Log("Bala con daño");
     }
     
-    
+     
     IEnumerator timerShoot(float interval)
     {
         yield return new WaitForSeconds(interval);

@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 9127650947749233669}
   - component: {fileID: 9127650947749233670}
   - component: {fileID: 9127650947749233671}
-  - component: {fileID: 9127650947749233673}
   - component: {fileID: 9127650947749233667}
   - component: {fileID: 9127650947749233668}
   - component: {fileID: 4511746152779206591}
+  - component: {fileID: 9127650947749233673}
+  - component: {fileID: -6846281523474920973}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -87,20 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9127650947749233673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9127650947749233674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf976fdb81194a98b1d18aebe3fcf80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemySpeed: 1
-  _targetPlayer: {fileID: 0}
 --- !u!61 &9127650947749233667
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -161,4 +148,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyLife: 0
+  _enemyScriptableObject: {fileID: 11400000, guid: 2aeab0f0393d31245b86c1765c1cf050, type: 2}
+--- !u!114 &9127650947749233673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9127650947749233674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf976fdb81194a98b1d18aebe3fcf80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemySpeed: 1
+  _targetPlayer: {fileID: 0}
+--- !u!114 &-6846281523474920973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9127650947749233674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8c88f261463e44b9165337ab880059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _enemyScriptableObject: {fileID: 11400000, guid: 2aeab0f0393d31245b86c1765c1cf050, type: 2}

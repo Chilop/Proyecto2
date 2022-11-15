@@ -4,26 +4,33 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int health = default;
+    [SerializeField] private HealthBar _healthBar = null;
+    [SerializeField] private int maxHealth = 100;
+    [SerializeField] int _health = default;
+
+
     void Start()
     {
-        health = 100;
+        _health = maxHealth;
+        _healthBar.SetMaxHealth(maxHealth);
     }
 
-   
+
     void Update()
     {
-        if(health <= 0)
+        if (_health <= 0)
         {
             Destroy(gameObject);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collision.collider.CompareTag("Enemy")) return;
+        if (!collision.CompareTag("Enemy")) return;
         var enemydamage = collision.gameObject.GetComponent<EnemyDamage>().enemyDamage;
 
-        health -= enemydamage;
+        _health -= enemydamage;
+
+        _healthBar.SetPlayerHealth(_health);      
     }
 }
