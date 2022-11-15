@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _speed = default;
     [SerializeField] private Rigidbody2D _rigidbody2D = default;
-    [SerializeField] private Camera _camera = default;
     [SerializeField] private Joystick _joystick = null;
     private Vector2 _movement = default;
     private GameObject _currentWeapon = default;
