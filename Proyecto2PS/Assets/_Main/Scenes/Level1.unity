@@ -532,7 +532,6 @@ GameObject:
   - component: {fileID: 425927171}
   - component: {fileID: 425927175}
   - component: {fileID: 425927174}
-  - component: {fileID: 425927177}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -645,21 +644,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &425927177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425927169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14da51789cfa6944190928bcd67a04a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthBar: {fileID: 582320193}
-  maxHealth: 100
-  _health: 0
 --- !u!1 &435407346
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +766,7 @@ GameObject:
   - component: {fileID: 493539053}
   - component: {fileID: 493539052}
   m_Layer: 6
-  m_Name: trigger
+  m_Name: Wall
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,6 +823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 539721726}
   - component: {fileID: 539721727}
+  - component: {fileID: 539721728}
   m_Layer: 0
   m_Name: trigger
   m_TagString: Player
@@ -887,6 +872,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &539721728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539721725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14da51789cfa6944190928bcd67a04a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 582320193}
+  maxHealth: 100
+  _health: 0
 --- !u!1 &565140814
 GameObject:
   m_ObjectHideFlags: 0
