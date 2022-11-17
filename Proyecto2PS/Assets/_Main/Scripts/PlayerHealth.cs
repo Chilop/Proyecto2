@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
         {
             
             DestroyPlayer();
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 
@@ -41,4 +42,5 @@ public class PlayerHealth : MonoBehaviour
         _player = GameObject.Find("Player");
         Destroy(_player);
     }
+
 }
