@@ -21,7 +21,6 @@ public class Shoot : MonoBehaviour
         bullet.GetComponent<BulletDamage>().SetDamage(_gunsinfo.Damage);
         Debug.Log("Bala con daño");
     }
-    
      
     IEnumerator timerShoot(float interval)
     {

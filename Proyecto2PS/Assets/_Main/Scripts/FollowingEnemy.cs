@@ -10,7 +10,7 @@ public class FollowingEnemy : MonoBehaviour
 
     void Start()
     {
-        _targetPlayer = GameObject.Find("Player");
+        _targetPlayer = GameManager.Instance.Player;
         _enemyRigidbody2D = this.GetComponent<Rigidbody2D>();
     }
 

@@ -7,8 +7,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private HealthBar _healthBar = null;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] int _health = default;
-    GameObject _player;
-
+    private GameObject _player = null;
 
     void Start()
     {
@@ -16,14 +15,12 @@ public class PlayerHealth : MonoBehaviour
         _healthBar.SetMaxHealth(maxHealth);
     }
 
-
     void Update()
     {
         if (_health <= 0)
-        {
-            
+        { 
             DestroyPlayer();
-            FindObjectOfType<GameManager>().EndGame();
+            GameManager.Instance.EndGame();
         }
     }
 
@@ -39,8 +36,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DestroyPlayer()
     {
-        _player = GameObject.Find("Player");
+        _player = gameObject;
         Destroy(_player);
     }
-
 }
