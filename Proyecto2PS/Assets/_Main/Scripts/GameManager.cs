@@ -1,15 +1,16 @@
-using JetBrains.Annotations;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    bool _endGame = false;
+    private bool _endGame = false;
     [SerializeField] private GameObject _gameOverUI = null;
     [SerializeField] private GameObject _player = null;
+
+    public GameObject Player => _player;
+
     private void Start()
     {
         SearchGameOverUI();
@@ -27,8 +28,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public GameObject Player => _player;
-
     public void EndGame()
     {
         if (_endGame == false)
@@ -44,7 +43,7 @@ public class GameManager : MonoBehaviour
         _gameOverUI.SetActive(false);
     }
 
-    IEnumerator GoBackToMainMenu()
+    private IEnumerator GoBackToMainMenu()
     {
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("MainMenu");
