@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Update()
     {
-        if(_enemyLife <= 0)
+        if (_enemyLife <= 0)
         {
             Destroy(gameObject);
         }
@@ -28,6 +28,8 @@ public class EnemyHealth : MonoBehaviour
         var bulletDamage = collision.gameObject.GetComponent<BulletDamage>().Damage;
 
         _enemyLife = _enemyLife - bulletDamage;
+
+
     }
 
     public void SetHealth(int _enemyhealth)
@@ -35,5 +37,5 @@ public class EnemyHealth : MonoBehaviour
         _enemyLife = _enemyhealth;
     }
 
-    
+
 }
