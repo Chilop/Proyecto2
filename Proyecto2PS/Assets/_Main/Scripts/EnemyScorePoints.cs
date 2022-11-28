@@ -12,8 +12,8 @@ public class EnemyScorePoints : MonoBehaviour
         SetScoreObtained(_enemyScriptableObject.ScorePoints);
     }
 
-    public void SetScoreObtained(int enemyscorepoints)
+    public void SetScoreObtained(int enemyScorePoints)
     {
-        enemyPointsObtained = enemyscorepoints;
+        enemyPointsObtained = enemyScorePoints;
     }
 }
