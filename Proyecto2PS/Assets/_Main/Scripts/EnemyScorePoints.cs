@@ -6,13 +6,14 @@ public class EnemyScorePoints : MonoBehaviour
 {
     public int enemyPointsObtained { get; private set; }
     [SerializeField] private EnemyScriptableObject _enemyScriptableObject = null;
+
     void Start()
     {
         SetScoreObtained(_enemyScriptableObject.ScorePoints);
     }
 
-    public void SetScoreObtained(int _enemyscorepoints)
+    public void SetScoreObtained(int enemyscorepoints)
     {
-        enemyPointsObtained = _enemyscorepoints;
+        enemyPointsObtained = enemyscorepoints;
     }
 }

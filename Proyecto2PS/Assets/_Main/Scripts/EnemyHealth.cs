@@ -36,6 +36,4 @@ public class EnemyHealth : MonoBehaviour
     {
         _enemyLife = _enemyhealth;
     }
-
-
 }
