@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     private bool _endGame = false;
     [SerializeField] private GameObject _gameOverUI = null;
     [SerializeField] private GameObject _player = null;
-
     public GameObject Player => _player;
 
     private void Start()

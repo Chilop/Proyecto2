@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private HealthBar _healthBar = null;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] int _health = default;
-    private GameObject _player = null;
+    [SerializeField] private GameObject _player = null;
 
     void Start()
     {
@@ -36,7 +36,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void DestroyPlayer()
     {
-        _player = gameObject;
         Destroy(_player);
     }
 }
