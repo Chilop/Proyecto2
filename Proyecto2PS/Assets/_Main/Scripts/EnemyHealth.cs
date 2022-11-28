@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
 
         _enemyLife = _enemyLife - bulletDamage;
 
-
+        ScoreManager.Instance.ScoreValue(1);
     }
 
     public void SetHealth(int _enemyhealth)
