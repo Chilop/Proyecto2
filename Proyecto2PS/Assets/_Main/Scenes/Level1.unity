@@ -10515,8 +10515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037d5faf554bca8438b3319f971d285d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
-  _MainMenu: {fileID: 0}
+  _audioSourceSFX: {fileID: 0}
+  _audioSourceMusic: {fileID: 0}
   _MainTheme: {fileID: 0}
   _gunSound: {fileID: 0}
   _musicBackgorund: {fileID: 0}

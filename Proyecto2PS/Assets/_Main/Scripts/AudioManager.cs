@@ -4,8 +4,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
-    [SerializeField] private AudioSource _source;
-    [SerializeField] private AudioSource _MainMenu;
+    [SerializeField] private AudioSource _audioSourceSFX;
+    [SerializeField] private AudioSource _audioSourceMusic;
     [SerializeField] private AudioClip _MainTheme;
     [SerializeField] private AudioClip _gunSound;
     [SerializeField] private AudioClip _musicBackgorund;
@@ -26,23 +26,23 @@ public class AudioManager : MonoBehaviour
     {
         
     }
-    public void PlaySound(AudioClip audioClip)
+    public void AmbientMusic(AudioClip levelMusic)
     {
-        _MainMenu.PlayOneShot(audioClip);
+        _audioSourceMusic.PlayOneShot(levelMusic);
     }
 
     public void ShootPlayer()
     {
-
+        PlaySound(_gunSound);
     }
 
-    public void AmbientMusic()
+    public void PlaySound(AudioClip gunSound)
     {
-
+        _audioSourceSFX.PlayOneShot(gunSound);
     }
 
-    public void PlayMainTheme()
+    public void PlayMainTheme(AudioClip mainMusic)
     {
-
+        _audioSourceMusic.PlayOneShot(mainMusic);
     }
 }
