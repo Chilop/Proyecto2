@@ -4,7 +4,12 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
-    [SerializeField] private Sound[] _sounds;
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioSource _MainMenu;
+    [SerializeField] private AudioClip _MainTheme;
+    [SerializeField] private AudioClip _gunSound;
+    [SerializeField] private AudioClip _musicBackgorund;
+
     private void Awake()
     {
         if (Instance != null)
@@ -17,13 +22,26 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
+    {
+        
+    }
+    public void PlaySound(AudioClip audioClip)
+    {
+        _MainMenu.PlayOneShot(audioClip);
+    }
+
+    public void ShootPlayer()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AmbientMusic()
+    {
+
+    }
+
+    public void PlayMainTheme()
     {
 
     }

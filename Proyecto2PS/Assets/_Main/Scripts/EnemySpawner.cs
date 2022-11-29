@@ -8,13 +8,13 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnEnemyCoroutine(_spawnInterval, _enemyPrefab));
+        StartCoroutine(SpawnEnemyCoroutine());
     }
 
-    IEnumerator SpawnEnemyCoroutine(float interval, GameObject enemy)
+    IEnumerator SpawnEnemyCoroutine()
     {
-        yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector2(Random.Range(-6f, 6f), Random.Range(-7f, 7f)), Quaternion.identity);
-        StartCoroutine(SpawnEnemyCoroutine(interval, enemy));
+        yield return new WaitForSeconds(_spawnInterval);
+        GameObject newEnemy = Instantiate(_enemyPrefab, new Vector2(Random.Range(-6f, 6f), Random.Range(-7f, 7f)), Quaternion.identity);
+        StartCoroutine(SpawnEnemyCoroutine());
     }
 }
