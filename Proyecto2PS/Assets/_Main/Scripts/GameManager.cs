@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.PlayAmbientMusic();
         SearchGameOverUI();
     }
 

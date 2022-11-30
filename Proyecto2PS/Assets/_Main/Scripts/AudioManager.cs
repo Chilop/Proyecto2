@@ -22,21 +22,22 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        
-    }
     public void AmbientMusic(AudioClip levelMusic)
     {
         _audioSourceMusic.PlayOneShot(levelMusic);
     }
 
-    public void ShootPlayer()
+    public void PlayAmbientMusic()
     {
-        PlaySound(_gunSound);
+        AmbientMusic(_musicBackgorund);
     }
 
-    public void PlaySound(AudioClip gunSound)
+    public void ShootPlayer()
+    {
+        PlaySoundShoot(_gunSound);
+    }
+
+    public void PlaySoundShoot(AudioClip gunSound)
     {
         _audioSourceSFX.PlayOneShot(gunSound);
     }
@@ -44,5 +45,10 @@ public class AudioManager : MonoBehaviour
     public void PlayMainTheme(AudioClip mainMusic)
     {
         _audioSourceMusic.PlayOneShot(mainMusic);
+    }
+
+    public void MusicMainTheme()
+    {
+        PlayMainTheme(_MainTheme);
     }
 }

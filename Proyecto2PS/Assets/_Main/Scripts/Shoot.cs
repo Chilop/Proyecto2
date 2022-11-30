@@ -18,6 +18,7 @@ public class Shoot : MonoBehaviour
     {
        var bullet = Instantiate(_bulletPrefab, _firepoint.position, _firepoint.rotation);
         bullet.GetComponent<BulletDamage>().SetDamage(_gunsinfo.Damage);
+        AudioManager.Instance.ShootPlayer();
         Debug.Log("Bala con daño");
     }
      
