@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779be0086534bfc4b9ac64dcbab579b2, type: 3}
   m_Name: NormalZombie
   m_EditorClassIdentifier: 
-  health: 5
-  damage: 10
-  speed: 0
-  scorePoints: 1
-  enemy: {fileID: 0}
+  _health: 5
+  _damage: 20
+  _speed: 1
+  _scorePoints: 1
+  _enemy: {fileID: 0}

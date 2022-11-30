@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
         if (_enemyLife <= 0)
         {
             Destroy(gameObject);
+            ScoreManager.Instance.ScoreValue(1);
         }
     }
 
@@ -28,8 +29,6 @@ public class EnemyHealth : MonoBehaviour
         var bulletDamage = collision.gameObject.GetComponent<BulletDamage>().Damage;
 
         _enemyLife = _enemyLife - bulletDamage;
-
-        ScoreManager.Instance.ScoreValue(1);
     }
 
     public void SetHealth(int _enemyhealth)

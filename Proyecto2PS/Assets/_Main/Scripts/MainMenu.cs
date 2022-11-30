@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        AudioManager.Instance.MusicMainTheme();
+    }
     public void StartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
