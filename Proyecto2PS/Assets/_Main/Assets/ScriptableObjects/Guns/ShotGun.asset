@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 779be0086534bfc4b9ac64dcbab579b2, type: 3}
-  m_Name: NormalZombie
+  m_Script: {fileID: 11500000, guid: 95fc3afd9d261db4c90073abc53e8f64, type: 3}
+  m_Name: ShotGun
   m_EditorClassIdentifier: 
-  _health: 15
-  _damage: 25
-  _speed: 1
-  _scorePoints: 1
-  _enemy: {fileID: 0}
+  mutationName: Shotgun
+  description: normal shotgun
+  damage: 6
+  weapon: {fileID: 3421859619356660341, guid: 9398a3c2e81e2c94e8da37469cf71c0c, type: 3}

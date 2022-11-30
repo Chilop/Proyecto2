@@ -15,4 +15,4 @@ MonoBehaviour:
   mutationName: CoaguledBlood
   description: Lanzar Sangre
   damage: 7
-  weapon: {fileID: 3421859619356660341, guid: 135314a602f04423c8a4dbe08f35635e, type: 3}
+  weapon: {fileID: 3421859619356660341, guid: 14dded30b20ba974c995bbfcefa3d317, type: 3}
