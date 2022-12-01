@@ -6,22 +6,24 @@ public class LootManager : MonoBehaviour
 {
     [SerializeField] private int _killedEnemiesCount;
     [SerializeField] private Transform _transformDropWeapon;
-    [SerializeField] private GameObject _gunShotgun;
+    [SerializeField] private GameObject _prefabShotgun;
+    [SerializeField] private GameObject _prefabGatling;
+    [SerializeField] private GameObject _prefabDefaultGun;
     [SerializeField] private List<GameObject> _gunsList = new List<GameObject>();
 
     void Start()
     {
-        _gunsList.Add(new GameObject("Shotgun"));
-        _gunsList.Add(new GameObject("AssaultRifle"));
+        _prefabDefaultGun = GetComponent<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
         CountEnemiesKilled(_killedEnemiesCount);
-        if(_killedEnemiesCount == 5)
+        if (_killedEnemiesCount == 5)
         {
-            Instantiate(_gunShotgun, _transformDropWeapon.position, Quaternion.identity);
+            int index = Random.Range(0 + 1, _gunsList.Count);
+            Instantiate(_gunsList[index], _transformDropWeapon.position, Quaternion.identity);
         }
     }
 
